@@ -1,0 +1,188 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 20px;
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  position: relative;
+  left: 30vh;
+  color: green;
+}
+
+.navbar p{
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-top: 6px;
+}
+
+
+.content{
+    width: 100%;
+  height: 100%;
+   margin-bottom: 0%;
+}
+
+.content img{
+  filter: brightness(50%);
+  height: 70vh;
+  width: 100%;
+}
+
+.content .MAINdescription h1{
+  color: white;
+  font-weight: bolder;
+  font-family: monospace;
+  position: relative;
+  bottom: 28vh;
+  margin-left: 23vh;
+  font-size: 40px;
+   transform: skewY(2.5deg);
+
+}
+
+.content1{
+  justify-content: center;
+  background-color: white;
+  height: 35vh;
+  width: 75%;
+  margin-top: 0;
+  position: relative;
+  left: 21vh;
+  bottom: 30vh;
+ box-shadow: 20px 20px 10px grey;
+ border: 1px solid grey;
+  transform: skewY(2deg);
+}
+
+
+
+.content1 button{
+  position: relative;
+  left: 5%;
+  bottom: 70%;
+  margin-left: 5vh;
+
+  border: none;
+}
+.content1 .tab-content{
+  display: none;
+ position: relative;
+ bottom: 65%;
+ left: 20%;
+  line-height: 1.8;
+  text-align: center;
+  font-size: 14.5px;
+}
+
+.content1 button:hover{
+  text-decoration: underline;
+  transform: scale(1.4);
+  
+}
+
+
+
+
+.content1 .tab-content.active{
+  display: block;
+}
+
+
+
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  position: relative;
+  right: 25vh;
+}
+
+.nav-links li a {
+  color: grey;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+
+.nav-links li a:hover {
+  text-decoration: underline;
+  text-decoration-color: green;
+ text-decoration-thickness:4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: green;
+  font-size: 24px;
+  display: none;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .toggle-button {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navbar .logo img {
+  position: relative;
+  right: 8vh;
+}
+
+.navbar .logo p{
+  position: relative;
+  right: 8vh;
+}
+
+}
