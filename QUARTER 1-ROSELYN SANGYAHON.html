@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>File Viewer</title>
+<style>
+   html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-wrap: column;
+      gap: 1.25rem;
+      padding: 2vh 5vw;
+      background-color: green;
+      min-height: 100vh;
+
+      /* Center and limit width on large screens */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .file-list {
+      width: 100%;
+      max-width: 150px;
+    }
+
+    .file-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+    }
+
+    .file-list li {
+      margin-bottom: 0.3125rem;
+    }
+
+    .file-list a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+
+    .file-list a:hover {
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+
+    .file-list img {
+      height: 3.125rem;
+      width: auto;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .file-list h3 {
+      color: white;
+      font-size: 1rem;
+    }
+
+    iframe {
+      flex-grow: 1;
+      width: 100%;
+      height: 80vh;
+      border: 2px solid white;
+      border-radius: 6px;
+      max-height: 90vh;
+  
+    }
+
+    /* For small screens (phones) */
+    @media (max-width: 600px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+        
+      }
+
+      .file-list {
+        width: 100%;
+        max-width: none;
+        
+      }
+
+      iframe {
+        height: 100vh;
+      }
+
+      .file-list img {
+        width: 4rem;
+        height: auto;
+      }
+    }
+
+    /* For tablets and medium desktops */
+    @media (min-width: 768px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+      }
+
+      .file-list {
+        width: 100%;
+      }
+
+      iframe {
+        height: 100vh;
+        
+      }
+    }
+
+    /* For very large screens (ultrawide) */
+    @media (min-width: 1600px) {
+      body {
+        padding: 5vh;
+        
+      }
+
+      .file-list {
+        width: 100%;
+       
+      }
+
+      iframe {
+        height: 100vh;
+    
+      }
+    }
+
+    
+</style>
+</head>
+<body>
+
+<div class="file-list">
+  <ul style="position: relative; bottom: 2.5vh; margin: 0%;">
+    <li><a href="QUARTER 1.html" ><img src="back.png" style="height: 40px; position: relative; bottom: 5px; right: 10px; margin-bottom: 0%;"></a></li>
+    </ul>
+  <img src="toppng.com-deped-logo-high-resolution-dep-ed-logo-3106x1573.png" style="height: 50px; width: 80px; margin-top: 0%;">
+  <h3 style="color: white;">QUARTER 1-ROSELYN SANGYAHON </h3>
+  <ul>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1hCkgRL0pf0tQtH_UaqCTqz46HMRzeJHd/edit?usp=sharing&ouid=103756182329703648493&rtpof=true&sd=true')">.docx1</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1QSC7kFn0sEV97El2go-ZypWLzkZpknZO/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx2</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1oycYmG3QQzZxQD-7GTbhyet1n4kprTnP/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx3</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1-66atEVSbKLv8JLXVieHV8RNH0LHkZoJ/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docsx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1BI_6hvFbsHMbXMQxd0kJWMCcTXLEs8sO/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx5</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/11CiVABWS0LbFH8kYTpzqtIrUgyCdicqj/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx6</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1W1SjJmxSVMIXPEBh_x2fSrAT9-UPrguq/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx7</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1TAeDoUa13b-k4luHrv9NMAirZm-YNlbP/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx8</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1Ikiqvrox-Wp8hFfnbSvweq6vAlV4tDII/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx<9/a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1mBFf6mfaYB_eGc6eBwczkIY_eG7WB9Jv/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx10</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1Q4q_N8BtfiwjeitXW5qIT4WI7RjUMRBj/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx11</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1qaO83lPUvEaszE-edJUuaFllLYj2xpR2/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx12</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1Z4oVzx2oEOUW0-yh0f45Hk1gV5yJ1_xV/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx13</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/16TmV5WxA4hmgS5lcUgZVZt6oUCJJdR-k/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx14</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1p6f7v_KXZ5sg_fvWNC1LIpv5gqTBRIHH/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx15</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/11CBIepZSeMDpJ6J8pcFJDVFNaRpj5HDH/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">.docx16</a></li>
+    
+</ul>
+
+</div>
+<iframe id="fileViewer" src="" width="640" height="480"></iframe>
+
+<script>
+  function loadFile(url) {
+    event.preventDefault();
+    document.getElementById('fileViewer').src = url;
+  }
+</script>
+
+</body>
+</html>

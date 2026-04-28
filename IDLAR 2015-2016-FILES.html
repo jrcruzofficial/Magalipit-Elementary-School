@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDLAR 2015-2016 Viewer</title>
+  <style>
+    html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-wrap: column;
+      gap: 1.25rem;
+      padding: 2vh 5vw;
+      background-color: green;
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .file-list {
+      width: 100%;
+      max-width: 15.625rem; /* 250px */
+    }
+
+    .file-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .file-list li {
+      margin-bottom: 0.3125rem;
+    }
+
+    .file-list a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.75rem;
+      display: inline-block;
+      word-wrap: break-word;
+    }
+
+    .file-list a:hover {
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+
+    .file-list img {
+      height: 2.5rem;
+      width: auto;
+    }
+
+    h3 {
+      color: white;
+      font-size: 1rem;
+      margin: 1rem 0;
+    }
+
+    iframe {
+      flex-grow: 1;
+      width: 100%;
+      height: 80vh;
+      border: 2px solid white;
+      border-radius: 6px;
+      max-height: 90vh;
+    }
+/* For small screens (phones) */
+    @media (max-width: 600px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+        
+      }
+
+      .file-list {
+        width: 100%;
+        max-width: none;
+        
+      }
+
+      iframe {
+        height: 100vh;
+      }
+
+      .file-list img {
+        width: 4rem;
+        height: auto;
+      }
+    }
+
+    /* For tablets and medium desktops */
+    @media (min-width: 768px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+      }
+
+      .file-list {
+        width: 100%;
+      }
+
+      iframe {
+        height: 100vh;
+        
+      }
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <div class="file-list">
+    <ul style="position: relative; bottom: 2.5vh;">
+      <li>
+        <a href="FILES-SECTION.html">
+          <img src="back.png" alt="Back" style="position: relative; bottom: 0.3125rem; right: 0.625rem;">
+        </a>
+      </li>
+    </ul>
+
+    <img src="toppng.com-deped-logo-high-resolution-dep-ed-logo-3106x1573.png" alt="DepEd Logo" style="height: 3.125rem; width: 5rem;">
+    <h3>IDLAR 2015-2016</h3>
+
+    <ul>
+      <!-- GRADE 1 -->
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/107SJ8_urAqZOf0K4Ttx7D4veoTiUnBm6/edit')">GRADE 1-BALITE MARY JOY S. VILLARUEL.docx1</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1zJjsdO0pK-1B6C69rX90VH5LfFGFeKVv/edit')">...docx2</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1W1ZFCc6iCH8rdctj6yvL0aapzeul6-Fh/edit')">...docx3</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1m_J6QLOn0ZGuBcDNUyN5UKEuUOK6ArAH/edit')">...docx4</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1R_fIkkfXauuEG3o7THcVpnGsIg6YKZow/edit')">...docx5</a></li>
+
+      <!-- GRADE 2 -->
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1mv0PwcHLHOfDFgBx1npOlrCof_W8auiE/edit')">GRADE 2-BURGOS ROSELY O. SANGYAHON.docx1</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1lzyvmq_Qe0V_eQzl_FFPlAc8L4codRSz/edit')">...docx2</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1jg1SEWtu8dnnqBb8hEm6M0aOGcnq5-eU/edit')">...docx3</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1-w8l4ZlBgvtwXH64Oj-6IkqZlZ0QxCuB/edit')">...docx4</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1p1rHhaWXUUdrk7aYZ02DYiHnYO644Jwc/edit')">...docx5</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1oTVUe-aXyuXMi5XCXGqQ0NOyqs0BU5W0/edit')">...docx6</a></li>
+
+      <!-- GRADE 3 -->
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1HWdU6ggsN5_dIKGH5_qL70NPmQokCH_6/edit')">GRADE 3-MASKAP.docx1</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/14Pg9LfXcHiPYIUvK8uXPoo4p0h924VKr/edit')">...docx2</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/13cxTresdQpJK2X51flvEQsrxXOuZ1JFv/edit')">...docx3</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1C0hU8xIr-pIcs9nY4012x5JIQVEAKzrr/edit')">...docx4</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1VMiy90d-B3InOlR6dbsg2su_Z3dM9SUy/edit')">...docx5</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1rDwbIC42k7uAcXIs0LkW4qSDdmMIBbfe/edit')">...docx6</a></li>
+
+      <!-- GRADE 4 -->
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1RJfGRb6S1mn24c9HDt6qVohFxPTtOlKJ/edit')">GRADE 4-PURAY SHERYL C. DIAZ.docx1</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1nBASWl2TqJG1Y017YV3ex9_a0XD7Sw9W/edit')">...docx2</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1P5mg8MORzXNjyizcB9Rr-q7sffqMVHgS/edit')">...docx3</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1bCudvzFgc5r7FRsz5sonByTIDnP4h2M2/edit')">...docx4</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/15wkZW0v7ynmQ3NLfh41uXCcLfrxz_3uU/edit')">...docx5</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/17K5Jd1UOLi555D4x34o-ts6LHIEADfA3/edit')">...docx6</a></li>
+
+      <!-- Add other grades similarly... -->
+
+      <!-- Placeholder links -->
+      <li><a href="#">BAMBA-DLAR Template.docx</a></li>
+      <li><a href="#">IDLAR Template</a></li>
+      <li><a href="#">Jean DLAR.docx</a></li>
+    </ul>
+  </div>
+
+  <iframe id="fileViewer" src="" title="Document Viewer"></iframe>
+
+  <script>
+    function loadFile(url) {
+      event.preventDefault();
+      document.getElementById('fileViewer').src = url;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>File Viewer</title>
+<style>
+   html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-wrap: column;
+      gap: 1.25rem;
+      padding: 2vh 5vw;
+      background-color: green;
+      min-height: 100vh;
+
+      /* Center and limit width on large screens */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .file-list {
+      width: 100%;
+      max-width: 150px;
+    }
+
+    .file-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+    }
+
+    .file-list li {
+      margin-bottom: 0.3125rem;
+    }
+
+    .file-list a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+
+    .file-list a:hover {
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+
+    .file-list img {
+      height: 3.125rem;
+      width: auto;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .file-list h3 {
+      color: white;
+      font-size: 1rem;
+    }
+
+    iframe {
+      flex-grow: 1;
+      width: 100%;
+      height: 80vh;
+      border: 2px solid white;
+      border-radius: 6px;
+      max-height: 90vh;
+  
+    }
+
+    /* For small screens (phones) */
+    @media (max-width: 600px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+        
+      }
+
+      .file-list {
+        width: 100%;
+        max-width: none;
+        
+      }
+
+      iframe {
+        height: 100vh;
+      }
+
+      .file-list img {
+        width: 4rem;
+        height: auto;
+      }
+    }
+
+    /* For tablets and medium desktops */
+    @media (min-width: 768px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+      }
+
+      .file-list {
+        width: 100%;
+      }
+
+      iframe {
+        height: 100vh;
+        
+      }
+    }
+
+    /* For very large screens (ultrawide) */
+    @media (min-width: 1600px) {
+      body {
+        padding: 5vh;
+        
+      }
+
+      .file-list {
+        width: 100%;
+       
+      }
+
+      iframe {
+        height: 100vh;
+    
+      }
+    }
+</style>
+</head>
+<body>
+
+<div class="file-list">
+  <ul style="position: relative; bottom: 2.5vh; margin: 0%;">
+    <li><a href="QUARTER 1.html" ><img src="back.png" style="height: 40px; position: relative; bottom: 5px; right: 10px; margin-bottom: 0%;"></a></li>
+    </ul>
+  <img src="toppng.com-deped-logo-high-resolution-dep-ed-logo-3106x1573.png" style="height: 50px; width: 80px; margin-top: 0%;">
+  <h3 style="color: white;">QUARTER 1-Norephine Gabasa </h3>
+  <ul>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1JYcEYLEIbZstSjFnzd8w0tjEfgcnDwO9/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 1</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1h4HYSpJ3_pEFRD_de1DuQdMR2VuLu4mH/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 1</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1uZl6z5oTQo2rvk_aoj_bWEb7dq05yiRR/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 1</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/10xdbIU_BCvFgAJEZj6iVzZjp2QtqxUW8/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 1</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/11iZj9aQXXguUjqMaT6UtVEtnUgTNgisE/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 1</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1CjZYve-213t8nYtjbarRk972D5YjWAME/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 2</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1-0rqhy772P83ZRc3fSDLKKxoPClkGlXf/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 2</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1TMpM_w3lyOtZhXTVuPZzKVx-Pgt_KQF8/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 2</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/114P_ZwoMYiKqMxsXxAJd2gLIpRDf5Qwy/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 2</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1YJmMNxXWoVrJwGln4ddk8mnyPQ8HpTUu/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 2</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1P5uJZdtPiPFj18yPMMZljzeK4UY5na9U/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 3</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1QGdDqSUTqF_C8MaFyojZIUuLp_JFIhGL/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 3</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1hea34J-1xxsyd27o_TD_gytsAfvsbAQo/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 3</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/18oVxHDStExmsmt1ZASWZHXHpFPs6XqPW/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 3</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/10GqyRnoFqvx3zs1WWLfgD1IHjJtAF1zA/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 3</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1qoQKPGBrXD14JNgA2zu22lUIz47TN3uW/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 3</a></li>
+       <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1vc4bomMR8_Zqk71rfmR81daGDs-BZYuf/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 4</a></li>
+       <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1RLtHciCmwDa2J8wbrvkEXwEyoPKbUiUm/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 4</a></li>
+       <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1MTi6zyFhJdYNvIeM3hBPFTgfQauIGve0/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 4</a></li>
+       <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/17pITIXF14aEIWBYHt584NO07-NcPmmM3/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 4</a></li>
+       <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1sqpBWw3j1Popt3K1-YAZbcVuQH3nqw-z/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 4</a></li>
+       <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1MCm--TSGzObRq5ZadoVU49SJN0pnT3kZ/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Week 4</a></li>
+</ul>
+
+</div>
+<iframe id="fileViewer" src="" width="640" height="480"></iframe>
+
+<script>
+  function loadFile(url) {
+    event.preventDefault();
+    document.getElementById('fileViewer').src = url;
+  }
+</script>
+
+</body>
+</html>

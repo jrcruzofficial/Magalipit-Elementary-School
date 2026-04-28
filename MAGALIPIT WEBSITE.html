@@ -1,0 +1,1674 @@
+ <!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Magalipit Elementary School</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      
+    }
+
+    html,
+    body{
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: green;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 40px;
+      width: 50px;
+      border-radius: 100%;
+      margin-right: 10px;
+      margin-left: 20vw;
+    }
+
+ 
+    .toggle-button {
+      background: none;
+      border: none;
+      color: green;
+      font-size: 24px;
+      display: none;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: fl ex;
+      gap: 25px;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      margin-right: 16vw;
+     
+    }
+
+    .nav-links li a {
+      color: grey;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .nav-links li a:hover {
+      text-decoration: underline;
+      text-decoration-color: green;
+      text-decoration-thickness: 2.5px;
+      
+    }
+
+    .content {
+      width: 100%;
+
+    }
+
+    .content img {
+      width: 100%;
+      height: auto;
+      filter: brightness(90%);
+      max-height: 58vh;
+      object-fit: cover;
+    }
+
+
+
+    .content1 {
+      position: relative;
+      margin: -50px auto 0 auto;
+      bottom: 2vh;
+      background-color: white;
+      width: 90%;
+     
+      max-width: 1100px;
+      padding: 15px;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid grey;
+      transform: skewY(2deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      text-align: center;
+      box-shadow: 25px 25px 15px grey;
+    }
+
+    .content1 video {
+      width: 50%;
+      max-width: 450px;
+      border-radius: 5px;
+        border: 5px solid black;
+        outline: .5px solid grey;
+    }
+
+
+   
+
+
+    .content1 button {
+      margin: 5px;
+      padding: 8px 12px;
+      font-size: 14px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      font-weight: bold;
+      
+    }
+
+    .content1 button:hover {
+      text-decoration: underline;
+      transform: scale(1.1);
+    }
+
+    .tab-content {
+      display: none;
+      font-size: 15px;
+      line-height: 1.5;
+      max-width: 530px;
+      transform: skewY(-2deg);
+      
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+
+
+
+
+/* NAVIGATION */
+      
+
+        /* POPUP BACKDROP */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            backdrop-filter: blur(7px);
+            background: rgba(124, 124, 124, 0.4);
+            animation: fadeIn .3s ease;
+            z-index: 9999;
+        }
+
+        /* POPUP BOX */
+        .popup-content {
+            width: 320px;
+            margin: 150px auto;
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.219);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            color: white;
+            animation: popupSlide .4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
+        @keyframes popupSlide {
+            from { transform: translateY(-20px); opacity: 0;}
+            to { transform: translateY(0); opacity: 1;}
+        }
+
+        .popup-content input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            background: rgba(255,255,255,0.25);
+            color: white;
+        }
+
+        .popup-content button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #00d8cd;
+            color: white;
+            font-weight: bold;
+            transition: .2s;
+        }
+        .popup-content button:hover {
+            background: #01aaa2;
+        }
+
+        .close {
+            position: absolute;
+            left: 38%;
+            top: 100px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .close:hover{
+          color: red;
+          transform: scale(1.5);
+        }
+
+        .popup-content h2{
+          text-align: center;
+          color: white;
+          text-decoration: underline  solid white;
+        }
+
+        .popup-content h3{
+          color: white;
+           text-align: center;
+        }
+
+
+
+
+   #aboutt {
+  max-width: 1600px;
+  margin: auto;
+  padding: 28px;
+  text-align: center;
+}
+
+#aboutt .pako{
+  width: 1.5%;
+  height: 2vh;
+  border-radius: 100%;
+  background-color: grey;
+  position: relative;
+  margin-top: 0%;
+  border: 2px solid black;
+}
+
+#aboutt .tali{
+
+
+  background-color: black;
+  margin-top: 0%;
+  position: relative;
+  margin-bottom: 0%;
+}
+
+/* --- IMAGE (RESPONSIVE) --- */
+#aboutt img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+  margin: auto;
+  position: relative;
+  border: 20px solid black;
+}
+
+/* --- TITLE --- */
+#aboutt h2 {
+  font-size: 32px;
+  
+  font-weight: bold;
+  position: relative;
+}
+
+#aboutt .me {
+  color: #0693f0;
+}
+
+/* --- PARAGRAPH (READ MORE AREA) --- */
+#readmore {
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+  max-height: none;
+  transition: max-height 0.5s ease;
+  position: relative;
+}
+
+
+
+.collapsed {
+  height: 150px;         /* adjusting for  visibilty */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Optional fade effect */
+.collapsed::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 90%;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, white);
+
+}
+
+/* --- BUTTON --- */
+#btn {
+  margin-top: 15px;
+  padding: 10px 25px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+#btn:hover {
+  transform: scale(1.05);
+}
+     
+
+
+#OBEPACC {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#OBEPACC h1{
+  font-size: 50px;
+ color: rgb(6, 29, 231);
+text-shadow: 5px 5px black;
+ position: relative;
+background-color: #218838;
+
+}
+
+/* Slider container */
+.slider {
+  width: 90%;        /* center with some margin */
+  max-width: 1600px; /* full large screen width */
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Slides wrapper */
+.slides {
+  display: flex;
+  width: calc(100% * 6); /* 5 cards + 1 duplicate */
+  animation: slide 25s linear infinite;
+  gap: 10px;
+}
+
+/* Pause animation on hover */
+.slider:hover .slides {
+  animation-play-state: paused;
+}
+
+/* Card default */
+.card {
+  flex: 0 0 auto;   /* flexible width */
+  width: 400px;    
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.card .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;            /* full height ng image */
+  max-height: 300px;       /* match image height */
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* lalabas sa bottom ng image */
+  transition: opacity 0.3s ease;
+  
+}
+
+/* Show info on card hover */
+.card:hover .info {
+  opacity: 1;
+}
+
+/* Infinite slide animation */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+#brigada{
+  height: 100%;
+
+background-color: white;
+
+}
+
+#brigada .brigada-info .BRI{
+  font-size: 25px;
+  font-style: sans-serif;
+  color: rgb(255, 94, 0);
+text-shadow: 2px 2px black;
+position: relative;
+}
+
+#brigada .brigada-info .ESK1{
+  font-size: 25px;
+  font-style: sans-serif;
+  color: orange;
+  text-shadow: 2px 2px black;
+  position: relative;
+}
+
+#brigada .brigada-info #deped{
+  position: relative;
+  height: 5vh;
+}
+
+#brigada .brigada-info #magalipit{
+  position: relative;
+
+  border-radius: 100%;
+}
+
+#brigada .brigada-info button{
+  width: 20%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #00d8cd;
+  color: white;
+  font-weight: bold;
+  transition: .2s;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+    animation: heartbeat 1s ease-in-out infinite;
+    background: #218838;
+    box-shadow: 0 0 20px #28a745;
+}
+
+@keyframes heartbeat {
+    0%   { transform: scale(1); }
+    14%  { transform: scale(1.3); }
+    28%  { transform: scale(1); }
+    42%  { transform: scale(1.3); }
+    70%  { transform: scale(1); }
+}
+
+#brigada .brigada-info button:hover{
+transform: scale(1.1);
+ background: #00a199;
+}
+
+#brigada .brigada-info p{
+  color:rgb(75, 74, 74);
+  font-size: 13px;
+  position: relative;
+}
+
+
+#brigada .previousBrig{
+  padding: 0%;
+margin: 0%;
+ position: relative;
+}
+
+#brigada .previousBrig img {
+position: relative;
+border: 5px solid black;
+min-height: 200px;
+max-height: 600px;
+}
+
+
+
+.btn-group {
+  
+    display: flex;
+    gap: 30%;
+      position: relative;
+        justify-content: center;
+   
+}
+
+.btn-group button{
+    
+  
+   
+      background-color: rgb(26, 173, 26);
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+
+   margin: 0%;
+ position: relative;
+
+}
+
+/* ===== ENROLLMENT SECTION CONTAINER ===== */
+.enrollment-section {
+  position: relative;
+  width: 100%;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  background: #f1f8f4; /* light background */
+  transition: background 0.5s ease;
+}
+
+/* DARK MODE */
+.enrollment-section.dark-mode {
+  background: #0f1a14;
+}
+
+/* ===== CARD WRAPPER ===== */
+.enrollment-section .enrollment-wrapper {
+  width: 100%;
+  max-width: 650px;
+  background: #ffffff;
+  padding: 2.4rem;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.enrollment-section.dark-mode .enrollment-wrapper {
+  background: #16251d;
+  color: #e0f2e9;
+}
+
+/* ===== INPUTS, SELECTS, TEXTAREA ===== */
+.enrollment-section .enrollment-wrapper input,
+.enrollment-section .enrollment-wrapper select,
+.enrollment-section .enrollment-wrapper textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: 1.5px solid #c8e6c9;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.enrollment-section.dark-mode .enrollment-wrapper input,
+.enrollment-section.dark-mode .enrollment-wrapper select,
+.enrollment-section.dark-mode .enrollment-wrapper textarea{
+  border-color: #2e7d32;
+  color: #e0f2e9;
+}
+
+.enrollment-section.dark-mode .enrollment-wrapper option{
+  border-color: #2e7d32;
+  color: #e0f2e9;
+  background-color: #0f1a14;
+}
+
+.enrollment-section .enrollment-wrapper input:focus,
+.enrollment-section .enrollment-wrapper select:focus,
+.enrollment-section .enrollment-wrapper textarea:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.2);
+  outline: none;
+}
+
+
+
+/* ===== ROWS ===== */
+.enrollment-section .row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.enrollment-section .row > div {
+  flex: 1 1 240px;
+}
+
+/* ===== LABELS ===== */
+.enrollment-section label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ===== SECTION HEADER ===== */
+.enrollment-section .section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.enrollment-section .section-header h2 {
+  color: #2e7d32;
+  margin-bottom: 0.4rem;
+}
+
+.enrollment-section .section-header p {
+  opacity: 0.8;
+}
+
+/* ===== BUTTON ===== */
+.enrollment-section button {
+  margin-top: 1.2rem;
+  padding: 1rem;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.enrollment-section button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(46,125,50,0.45);
+}
+
+/* ===== TEXTAREA ===== */
+.enrollment-section textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* ===== DARK MODE TOGGLE ===== */
+.enrollment-section .dark-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+
+.enrollment-section .switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.enrollment-section .switch input {
+  display: none;
+}
+
+.enrollment-section .slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.enrollment-section .slider::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.enrollment-section .switch input:checked + .slider {
+  background: #2e7d32;
+}
+
+.enrollment-section .switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+
+
+
+
+
+
+
+      
+
+        
+
+
+
+        
+
+    
+
+    /* =============== RESPONSIVE STYLES =============== */
+
+    /* Phones */
+    @media (max-width: 600px) {
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        gap: 14px;
+         z-index: 1;
+      }
+   
+      
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .toggle-button {
+        display: block;
+      
+       
+      }
+
+
+      .content1 {
+        transform: skewY(0deg);
+        margin-top: -50px;
+        flex-direction: column;
+        top:2px;
+      }
+
+      .tab-content{
+        transform: none;
+      }
+
+      iframe, video {
+        height: auto;
+        width: 50%;
+      }
+
+      .content1 .stand{
+      background-color: black;
+      width: 1%;
+      height: 3vw;
+      color: black;
+      position: relative;
+      bottom: 1.3vh;
+      
+    }
+
+     .content1 .stand2{
+      background-color: black;
+      width: 8%;
+      height: 3vw;
+      color: black;
+      position: relative;
+      bottom: 2vh;
+      border-radius: 100%;
+      position: relative;
+      bottom: 3vh;
+      
+    } 
+
+     #aboutt .pako{
+   width: 3%;
+    left: 49%;
+  }
+
+  #aboutt .tali{
+   
+    height: 7vh;
+    width: .6%;
+    left: 50%;
+  }
+
+   #aboutt h2 {
+    font-size: 26px;
+
+  }
+  #readmore {
+    font-size: 16px;
+    
+  }
+  #btn {
+    width: 100%;
+  }
+
+  #aboutt img {
+    max-width: 300px;
+  }
+
+ .card {
+    flex: 0 0 18%;
+    
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  #OBEPACC h1{
+    width: 70%;
+    left: 15%;
+    border-radius: 10vh;
+  }
+
+  #brigada .brigada-info .BRI{
+  font-size: 45px;
+  text-align: center;
+  top: 13vh;
+}
+
+
+#brigada .brigada-info .ESK1{
+  font-size: 45px;
+  text-align: center;
+  top: 7vh;
+}
+
+#brigada .brigada-info #deped{
+   left: 40%;
+   top: 10vh;
+}
+
+#brigada .brigada-info #magalipit{
+  left: 42%;
+  top: 8vh;
+  max-height: 10vh;
+}
+
+#brigada{
+  height: 150vh;
+}
+
+#brigada .brigada-info button{
+  top: 20vh;
+  left: 23%;
+}
+
+#brigada .brigada-info button:hover{
+transform: scale(1.1);
+ background: #00a199;
+}
+
+#brigada .brigada-info p{
+  top: 20vh;
+margin-left: 20%;
+}
+
+#brigada .previousBrig{
+  padding: 0%;
+margin: 0%;
+
+top: 26%;
+
+}
+
+#brigada .previousBrig img {
+  height: 200px;
+  width: 70%;
+  left: 15%;
+  
+}
+
+#brigada .btn-group{
+  gap: 75%;
+  bottom: 13vh;
+}
+
+
+#brigada .btn-group button{
+
+font-size: 60px;
+    
+}
+
+.enrollment-section .enrollment-wrapper {
+    padding: 1.8rem;
+  }
+ 
+}
+
+
+
+
+ 
+
+
+
+    /* Tablets and medium screens */
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .content1{
+        height: 25vw;
+        bottom: 8.2vh;
+      }
+
+
+   
+
+      
+
+     .content1 video{
+      position: relative;
+      right: 26%;
+      top: 3.5%;
+      width: 30vw;
+     }
+
+     .content1 button{
+      position: relative;
+      left: 55%;
+      bottom: 17vw;
+      
+     }
+
+
+     .tab-content{
+     position: relative;
+      left: 25%;
+      bottom: 16.5vw;
+     font-size: .6vw;
+      transform: skewY(.1deg);
+     }
+
+     .tab-content:hover{
+            transform: scale(1.5);
+
+    }
+
+      #aboutt .pako{
+    top: 10vh;
+    left: 21.3%;
+  }
+
+  #aboutt .tali{
+    top: 10vh;
+    height: 10vh;
+    width: .3%;
+    left: 22%;
+  }
+
+    #aboutt img{
+      max-width: 350px;
+      right: 28%;
+      top: 10vh;
+    }
+
+    #aboutt h2{
+      bottom: 18vh;
+      left: 25%;
+      font-size: 50px;
+    }
+    
+    #readmore {
+      text-align: center;
+    }
+
+   .card {
+    flex: 0 0 10%;
+     height: 41vh;
+    
+  }
+  .card img {
+    height: 200px;
+  }
+
+   #OBEPACC h1{
+    width: 40%;
+    left: 30%;
+    top: 5vh;
+    border-radius: 10vh;
+  }
+
+
+  #brigada .brigada-info .BRI{
+  font-size: 65px;
+  text-align: left;
+   top: 4vh;
+   left: 10%;
+}
+
+#brigada .brigada-info .ESK1{
+  font-size: 65px;
+  text-align: left;
+  bottom: 5vh;
+  left: 10%;
+}
+
+#brigada .brigada-info #deped{
+  left: 18%;
+ top: 10vh;
+}
+
+#brigada .brigada-info #magalipit{
+ left: 70%;
+ bottom: 33vh;
+ max-height: 25vh;
+ 
+}
+
+#brigada .brigada-info button{
+  bottom: 25vh;
+  width: 8%;
+  right:1.5%;
+}
+
+#brigada .brigada-info button:hover{
+transform: scale(1.1);
+ background: #00a199;
+}
+
+#brigada .brigada-info p{
+  font-size: .7vw;
+  bottom: 25vh;
+  text-align: left;
+  left: 11%;
+}
+
+#brigada .previousBrig{
+  padding: 0%;
+margin: 0%;
+
+  bottom: 27.5%;
+
+}
+
+#brigada .previousBrig img {
+  height: 400px;
+  width: 55%;
+  left: 5%;
+  
+}
+
+
+#brigada .btn-group{
+left: 30%;
+bottom: 25vh;
+  gap: 5%;
+}
+
+
+#brigada .btn-group button{
+
+font-size: 60px;
+    
+}
+
+}
+
+
+
+
+
+
+
+    /* Very large screens */
+    @media (min-width: 1600px) {
+      body {
+        padding: 1vh;
+      }
+
+      .content {
+      width: 94%;
+    }
+
+
+    .content img {
+      width: 106.5%;
+
+     
+    }
+
+
+
+  
+
+
+      .content1{
+        height: 19vw;
+        transform: skewY(2deg);
+        position: relative;
+        bottom: 6.5vh;
+        left:2.3%;
+      }
+
+      .content1 button{
+        position: relative;
+      left: 16vh;
+      bottom: 13vw;
+      transform: skewY(.3deg);
+      }
+
+      .content1 .tab-content{
+        position: relative;
+        left: 25vh;
+      bottom: 13vw;
+       transform: skewY(.2deg);
+       font-size: .7vw ;
+       
+      } 
+
+      .content1 video{
+        position: relative;
+      right: 27vh;
+      top:9%
+       
+      }
+
+
+      iframe {
+        height: 100vh;
+      }
+      
+
+  #aboutt {
+    max-width: 1400px;
+    padding: 50px;
+  }
+  #readmore {
+    font-size: 18px;
+     left: 22%;
+    bottom: 13vh;
+    text-align: center;
+  }
+
+  #aboutt .pako{
+    top: 35vh;
+    left: 6.4%;
+  }
+
+  #aboutt .tali{
+    top: 35vh;
+    height: 10vh;
+    width: .3%;
+    left: 7%;
+  }
+  #aboutt img {
+    max-width: 500px;
+    right: 42%;
+    top: 35vh;
+  }
+
+  #aboutt h2{
+   left: 20%;
+   bottom: 15vh;
+   font-size: 40px;
+  }
+
+
+  #btn{
+    bottom: 13vh;
+  }
+
+  #OBEPACC h1{
+  font-size: 50px;
+ color: rgb(6, 28, 226);
+width: 30%;
+left: 50%;
+ top:20vh;
+}
+
+  .slides {
+    width: calc(100% * 9); /* 5 cards + 1 duplicate */
+  }
+
+ .card {
+    flex: 0 0 8%;
+    max-height: none;
+    height: 95vh;
+
+  }
+  .card img {
+    height: 400px; /* full large images */
+    position: relative;
+    left: 0; 
+    bottom: 0;
+    
+  }
+
+   #brigada .brigada-info .BRI{
+  font-size: 75px;
+  text-align: left;
+   top: 4vh;
+   left: 10%;
+}
+
+#brigada .brigada-info .ESK1{
+ font-size: 75px;
+  text-align: left;
+  bottom: 5vh;
+  left: 10%;
+}
+
+#brigada .brigada-info #deped{
+   left: 18%;
+ top: 10vh;
+}
+
+
+
+#brigada .brigada-info #magalipit{
+left: 70%;
+ bottom: 33vh;
+ max-height: 35vh;
+}
+
+#brigada .brigada-info #brigads{
+  top: 10vh;
+ 
+}
+
+
+#brigada .brigada-info p{
+
+  top: 10vh;
+  text-align: left;
+  font-size: 15px;
+  left: 10%;
+}
+
+#brigada .brigada-info button{
+  bottom: 20vh;
+  width: 8%;
+  right: 2.5%;
+}
+
+#brigada .brigada-info button:hover{
+transform: scale(1.1);
+ background: #00a199;
+}
+
+#brigada .previousBrig{
+  padding: 0%;
+margin: 0%;
+
+  bottom: 57.5%;
+
+}
+
+#brigada .previousBrig img {
+  height: 600px;
+  width: 50%;
+  left: 30%;
+}
+
+#brigada .btn-group{
+left: 0%;
+bottom: 35vh;
+  gap: 40%;
+}
+
+
+#brigada .btn-group button{
+left: 5%;
+font-size: 70px;
+    
+}
+
+
+}
+
+
+
+
+    
+
+    </style>
+  </head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="malagalipit logo.jfif.jfif" alt="logo" data-aos="fade-right" />
+      <p data-aos="fade-down"
+     data-aos-delay="1100">MAGALIPIT</p>
+    </div>
+        <button class="toggle-button" data-aos="fade-left" onclick="toggleMenu()">☰</button>
+          <ul class="nav-links" id="navLinks">
+            <li data-aos="fade-down-left"
+     data-aos-delay="400"><a href="#" style="color: green;">Home</a></li>
+            <li data-aos="fade-down-left"
+     data-aos-delay="500"><a href="#aboutt">About</a></li>
+            <li data-aos="fade-down-left"
+     data-aos-delay="600"><a href="#" onclick="openLogin()">Files</a></li> 
+      <!-- GLASS POPUP LOGIN -->
+        <div id="loginBox" class="popup">
+          <span class="close" onclick="closeLogin()">✕</span>
+            <div class="popup-content">
+              <h2 style="text-align:center; margin-bottom:20px;">Admin</h2>
+              <h3>Account Acces</h3>
+                <input type="text" id="user" placeholder="Username">
+                <input type="password" id="pass" placeholder="Password">
+                <button onclick="checkLogin()">Login</button>
+            </div>
+        </div>
+            <li data-aos="fade-down-left"
+     data-aos-delay="700"><a href="CONTACT-SECTION.html">Contact</a></li>
+     <li data-aos="fade-down-left"
+     data-aos-delay="800"><a href="#enrollmentSection">Appt Reg. Erollment</a></li>
+              <img src="toppng.com-deped-logo-high-resolution-dep-ed-logo-3106x1573.png" style="height: 25px; width: 50px; margin-left: 2.5vw;" alt="logo1" data-aos="fade-left" />
+          </ul>
+  </nav>
+
+
+
+  <!-- Page content -->
+  <div class="content">
+    <img src="school overview pic.png" alt="background image"/>
+
+        
+
+  <div class="content1"> 
+    <video src="SCHOOL SHORT VIDEO CLIP.mp4" controls loop> </video>
+    <div class="stand"></div>
+    <div class="stand2"></div>
+      <div class="buttons">
+        <button style="color: green;" onclick="showTab('about')">ABOUT US</button>
+        <button style="color: rgb(0, 102, 255);" onclick="showTab('mission')">MISSION</button>
+        <button style="color: red;" onclick="showTab('vision')">VISION</button>
+          </div>
+
+  <div id="about" class="tab-content active">
+    <p style="color: green;">Magalipit Elementary School is one of the last miles school in Montalban Rizal <br>
+          classified as one of the barangay of Mascap. It is a complete elementary ( Kinder to Grade six)<br>
+          and is a small school with enrollment ranging from 200-250.Currently,<br>
+           Magalipit ES has 8 nationally funded teaching and 2 non teaching personnel's;<br> 
+          Assistant School Principal 2 and Administrative Officer 2.</p>
+           </div>
+
+  <div id="mission" class="tab-content">
+    <p style="color: rgb(0, 102, 255);">
+        The DepEd Mission To protect and promote the right of every Filipino to quality, equitable,<br> culture-based, and complete basic education where:
+        Students learn in a child-friendly<br>, gender-sensitive, safe, and motivating environment.
+        Teachers facilitate learning and constantly<br> nurture every learner.
+        Administrators and staff, as stewards of the institution, ensure an enabling<br> and supportive environment for effective learning to happen.
+        Family, community, <br>and other stakeholders are actively engaged and share responsibility for developing life-long learners.<br>
+        Our Core Values
+        Maka-Diyos
+        Maka-tao
+        Makakalikasan
+        Makabansa
+        </p>
+          </div>
+
+  <div id="vision" class="tab-content">
+    <p style="color: red;">
+        We dream of Filipinos
+        who passionately love their country
+        and whose values and competencies<br>
+        enable them to realize their full potential
+        and contribute meaningfully to building the nation.<br>
+        As a learner-centered public institution,
+        the Department of Education
+        continuously improves itself<br>
+        to better serve its stakeholders.
+        </p>
+          </div>
+            </div>
+              </div>
+
+ 
+
+    <section>
+            <div id="aboutt" >
+              <div class="pako"data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000"></div>
+              <div class="tali"data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000"></div>
+                <img src="about1.jpg" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+                  <h2 data-aos="fade-left" data-aos-duration="1000" data-aos-offset="320">About <span class="me">School</span></h2>
+                    <p id="readmore" class="collapsed" >Magalipit Elementary School is one of the identified Last Mile Schools in Montalban, Rizal,<br> and is located in the quiet and close-knit community of Barangay Mascap. It is a complete elementary school, <br>catering to learners from Kindergarten to Grade Six, and has consistently served as a second home for children in the area.<br> With an average enrollment of 200–250 learners, the school remains small in size but rich in community spirit and dedication.<br>
+                    Despite not having the same level of funding or large facilities commonly found in bigger schools, <br>Magalipit Elementary School continues to uphold its commitment to providing quality, learner-centered education.<br> The school maximizes the resources it has and ensures that every learner receives proper attention, guidance,<br> and support—something that smaller schools are able to offer more personally.<br>
+                    Currently, Magalipit ES is staffed by 8 nationally funded teachers and 2 non-teaching personnel,<br> led by an Assistant School Principal II and supported by an Administrative Officer II.<br> Each member of the teaching and non-teaching staff works collaboratively to maintain a nurturing and inclusive learning environment, <br>ensuring that learners not only gain academic skills but also develop values that will guide them in their future endeavors.<br>
+                    Magalipit Elementary School may be modest in size, but its heart for service, dedication to learners, <br>and strong connection with the community make it a meaningful and impactful institution—proving <br>that a school does not need to be big or highly funded to deliver quality education.
+                   </p> 
+                <button id="btn" onclick="toggleReadMore()" data-aos="zoom-in">Read More</button>
+            <div>
+
+          <div id="OBEPACC">
+            <h1  data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000">OBE PACC</h1>
+              <div class="slider">
+                <div class="slides">
+
+                  <div class="card">
+                    <img src="PRINCIPAL-SAMSON.jpg" style="border: none;">
+                  <div class="info">
+                    <h3>CYNTHIA D. SAMSON</h3>
+                    <h3>Principal</h3>
+                </div>
+            </div>
+
+            <div class="card">
+              <img src="TEACHER -OBE COORDINATOR-SANGHAYON.jpg" style="border: none;">
+                <div class="info">
+                  <h3>ROSELYN O. SANGHAYON</h3>
+                  <h3>Teacher III/OBE Coordinator</h3>
+                </div>
+            </div>
+
+            <div class="card">
+              <img src="TEACHER 3-LIS COORDINATOR-BAMBA.jpg" style="border: none;">
+                <div class="info">
+                  <h3>MARY JEAN C. BAMBA</h3>
+                  <h3>Teacher III/LIS Coordinator</h3>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="TEACHER 1-DESIGNATED GUIDAMCE COORDINATOR-GABASA.jpg" style="border: none;">
+              <div class="info">
+                <h3>NOREPHINE G. GABASA</h3>
+                <h3>Teacher I/Designated Guidance Coordinator</h3>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="TEACHER 3-OVER ALL GRADE LEVEL COORDINATOR-DELA CRUZ.jpg" style="border: none;">
+              <div class="info">
+                <h3>IRENE T. DELA CRUZ</h3>
+                <h3>Teacher III/OVER-ALL LEVEL Coordinator</h3>  
+              </div>
+            </div>
+
+            <!-- Duplicate first card for infinite loop -->
+            <div class="card">
+              <img src="PRINCIPAL-SAMSON.jpg" style="border: none;">
+              <div class="info">
+                <h3>CYNTHIA D. SAMSON</h3>
+                <h3>Principal</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+                
+    </section>
+
+    <section>
+
+        <div id="brigada">
+          <div class="brigada-info">
+            <img src="toppng.com-deped-logo-high-resolution-dep-ed-logo-3106x1573.png" id="deped">
+              <h3 CLASS="BRI" data-aos="fade-up-right">BRIGADA</h3>
+              <h3 class="ESK1" data-aos="fade-up-left" data-aos-duration="1000">ESKWELA</h3>
+                <img src="malagalipit logo.jfif.jfif" id="magalipit" data-aos="zoom-in" data-aos-delay="1500" data-aos-duration="600">
+                  <button id="brigads"><a href="JOINING-FORM.html"  target="_blank" style="text-decoration: none; color: white;">Join Us </a></button>
+                    <p>Note: you must willing & and be serious before you go.</p>
+                  </div>
+                <div class="previousBrig" >
+                  <img id="gallery-img" src="previousbrigada6.jpg" data-aos="zoom-in">
+                  
+                <div class="btn-group">
+                   <button id="backBtn"><</button>
+                   <button id="nextBtn">></button>
+                </div>
+              </div>
+            </div>
+
+     </section>
+
+     <section class="enrollment-section" id="enrollmentSection">
+  <!-- Dark mode toggle -->
+  <div class="dark-toggle" data-aos="fade-down-left">
+    <label class="switch">
+      <input type="checkbox" id="enrollDarkModeToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="enrollment-wrapper">
+    <header class="section-header" data-aos="zoom-out">
+      <h2>Online Appointment Registration for ENROLEMENT</h2>
+      <p>Please complete the form to schedule enrollment</p>
+    </header>
+
+    <form class="enrollment-form" data-aos="fade-left" id="enrollForm" action="#" method="post" autocomplete="on">
+      <!-- Parent / Guardian Info -->
+      <div class="row">
+        <div>
+          <label for="enroll_parentName">Parent / Guardian Name</label>
+          <input type="text" id="enroll_parentName" name="enroll_parentName" placeholder="Albert Einstein" required>
+        </div>
+        <div>
+          <label for="enroll_contactNumber">Contact Number</label>
+          <input type="tel" id="enroll_contactNumber" name="enroll_contactNumber" placeholder="+1 234 567 8900" required pattern="[0-9+\s]{7,15}">
+        </div>
+      </div>
+
+      <label for="enroll_email">Email Address</label>
+      <input type="email" id="enroll_email" name="enroll_email" placeholder="parent@example.com" required>
+
+      <!-- Student Info -->
+      <div class="row">
+        <div>
+          <label for="enroll_studentName">Student Full Name</label>
+          <input type="text" id="enroll_studentName" name="enroll_studentName" placeholder="Joshua C Garcia" required>
+        </div>
+        <div>
+          <label for="enroll_studentAge">Student Age</label>
+          <input type="number" id="enroll_studentAge" name="enroll_studentAge" min="4" max="16" placeholder="7" required>
+        </div>
+      </div>
+
+      <label for="enroll_gradeLevel">Grade Level Applying For</label>
+      <select id="enroll_gradeLevel" name="enroll_gradeLevel" required>
+        <option value="">Select Grade</option>
+        <option value="Kindergarten">Kindergarten</option>
+        <option value="Grade1">Grade 1</option>
+        <option value="Grade2">Grade 2</option>
+        <option value="Grade3">Grade 3</option>
+        <option value="Grade4">Grade 4</option>
+        <option value="Grade5">Grade 5</option>
+        <option value="Grade6">Grade 6</option>
+      </select>
+
+      <!-- Appointment Date & Time -->
+      <div class="row">
+        <div>
+          <label for="enroll_appointmentDate">Preferred Date</label>
+          <input type="date" id="enroll_appointmentDate" name="enroll_appointmentDate" required>
+        </div>
+        <div>
+          <label for="enroll_appointmentTime">Preferred Time</label>
+          <input type="time" id="enroll_appointmentTime" name="enroll_appointmentTime" required>
+        </div>
+      </div>
+
+      <label for="enroll_notes">Additional Notes (optional)</label>
+      <textarea id="enroll_notes" name="enroll_notes" placeholder="Previous school, documents, special requests..." rows="4"></textarea>
+
+      <button type="submit" id="enroll_submitBtn" name="enroll_submitBtn">Schedule Appointment</button>
+    </form>
+  </div>
+</section>
+
+
+
+  
+
+    <script>
+
+
+    // Toggle button for small screen
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+
+    function showTab(id) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+
+    // Admin account access for files
+    function openLogin() {
+    document.getElementById("loginBox").style.display = "block";
+}
+
+function closeLogin() {
+    document.getElementById("loginBox").style.display = "none";
+}
+
+function checkLogin() {
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    // EDIT YOUR ADMIN ACCOUNT HERE
+    if (u === "adminMagalipit" && p === "depedmagalipit") {
+
+        // Save admin token
+        localStorage.setItem("adminLogged", "true");
+
+        // Redirect to files page
+        window.location.href = "FILES-SECTION.html";
+
+    } else {
+        alert("Incorrect admin login!");
+    }
+}
+
+
+
+//for readmore button
+function toggleReadMore() {
+  const text = document.getElementById("readmore");
+  const btn = document.getElementById("btn");
+
+  if (text.classList.contains("collapsed")) {
+    text.classList.remove("collapsed");
+    btn.textContent = "Read Less"; 
+  } else {
+    text.classList.add("collapsed");
+    btn.textContent = "Read More";
+  }
+}
+
+const images = ["previousbrigada4.jpg", "previousbrigada5.jpg", "birgada32023.jpg", "birgada12023.jpg"  , "brigida22034.jpg", "previousbrigada2.jpg"]; 
+    let index = 0;
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        document.getElementById("gallery-img").src = images[index];
+    });
+
+    document.getElementById("backBtn").addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        document.getElementById("gallery-img").src = images[index];
+    });
+
+    const enrollSection = document.getElementById('enrollmentSection');
+const enrollToggle = document.getElementById('enrollDarkModeToggle');
+
+enrollToggle.addEventListener('change', () => {
+  enrollSection.classList.toggle('dark-mode');
+});
+
+ AOS.init();
+    </script>
+  </body>
+</html>

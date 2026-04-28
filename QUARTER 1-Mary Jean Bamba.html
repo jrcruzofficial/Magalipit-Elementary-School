@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>File Viewer</title>
+<style>
+   html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-wrap: column;
+      gap: 1.25rem;
+      padding: 2vh 5vw;
+      background-color: green;
+      min-height: 100vh;
+
+      /* Center and limit width on large screens */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .file-list {
+      width: 100%;
+      max-width: 150px;
+    }
+
+    .file-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+    }
+
+    .file-list li {
+      margin-bottom: 0.3125rem;
+    }
+
+    .file-list a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+
+    .file-list a:hover {
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+
+    .file-list img {
+      height: 3.125rem;
+      width: auto;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .file-list h3 {
+      color: white;
+      font-size: 1rem;
+    }
+
+    iframe {
+      flex-grow: 1;
+      width: 100%;
+      height: 80vh;
+      border: 2px solid white;
+      border-radius: 6px;
+      max-height: 90vh;
+  
+    }
+
+    /* For small screens (phones) */
+    @media (max-width: 600px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+        
+      }
+
+      .file-list {
+        width: 100%;
+        max-width: none;
+        
+      }
+
+      iframe {
+        height: 100vh;
+      }
+
+      .file-list img {
+        width: 4rem;
+        height: auto;
+      }
+    }
+
+    /* For tablets and medium desktops */
+    @media (min-width: 768px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+      }
+
+      .file-list {
+        width: 100%;
+      }
+
+      iframe {
+        height: 100vh;
+        
+      }
+    }
+
+    /* For very large screens (ultrawide) */
+    @media (min-width: 1600px) {
+      body {
+        padding: 5vh;
+        
+      }
+
+      .file-list {
+        width: 100%;
+       
+      }
+
+      iframe {
+        height: 100vh;
+    
+      }
+    }
+</style>
+</head>
+<body>
+
+<div class="file-list">
+  <ul style="position: relative; bottom: 2.5vh; margin: 0%;">
+    <li><a href="QUARTER 1.html" ><img src="back.png" style="height: 40px; position: relative; bottom: 5px; right: 10px; margin-bottom: 0%;"></a></li>
+    </ul>
+  <img src="toppng.com-deped-logo-high-resolution-dep-ed-logo-3106x1573.png" style="height: 50px; width: 80px; margin-top: 0%;">
+  <h3 style="color: white;">QUARTER 1-Mary Jean Bamba </h3>
+  <ul>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1kqKFVIDokdCVGPXkDJ5j1x814iN1G3Ms/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba DLL_SCIENCE 5_Q1 WE.docs</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1VtJLLsGP9jvuizOcsgm22WhCbqbt0jpt/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba G6 Q1W1 DLL SCIENCE(MELCs.).docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1SNkay8MZFifejbuvx1NoZVj-TI1yhEqT/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba G6 Q1W2 DLL MATH(MELCs).docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1-yC7IfoD3zjwrzZennwLHPjk50ZFHdJG/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba G6 Q1W2 DLL SCIENCE(MELCs).docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/132XxZipreHDixGR4Qab9Bz0Klr88Q61Y/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba G6 Q1W3 DLL MATH(MELCs.).docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/15tLsD9guG5uhCTdCWUTZEe0gXhaHmaRr/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba G6 Q1W3 DLL SCIENCE(MELCs.).docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1cqVpyBL26MB7zyYfNkZpx3GYx7ohu93p/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba G6 Q1W3 DLL MATH(MELCs).docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1Wk-S6d1-Oaly7RLafLKzyOeahwhBShTx/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba G6 Q1W4 DLL SCIENCE(MELCs).docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/16RiraMx3ClzMJFGIiyQjQg8YwYucDg_G/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba G6 Q1W5 DLL SCIENCE(MELCs).docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1tSvGD86a9RPxkVpMAOnyMJEo2RJ7kjOq/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba G6 Q1W6 DLL SCIENCE(MELCs).docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1P_Ia2VcwmIyNHOc9-dM6FStRobKq_wIN/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba MATATAG DLL WEEK 1 MATH G4.docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1olxmtIATM1d_I_PP_nU5BS2ZeJH30s-B/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba MATATAG DLL WEEK 1 SCIENCE G4.docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1rBgQIJu8_VsTwMwIkAkqYMGIyMh48oRL/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba MATATAG DLL WEEK 2 MATH G4.docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1riNQb9t72WI3sm_oEhQemu36xk1l2R6x/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba MATATAG DLL WEEK 2 SCIENCE G4.docx</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1PVs8qyDV1noYohgEiTk9EWKFVPZyU8JZ/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba MATATAG DLL WEEK 3 MATH G4.docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1C0E-_yHpBc03iM_IYyWnxlNLRtae6p4p/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba MATATAG DLL WEEK 3 SCIENCE G4.docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1tOugpbwQUWMIljYh_924Er4e2D901ksF/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba MATATAG DLL WEEK 4 MATH G4.docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/13olZB1OoUTh9qjLteYczIapZTxp8kyYR/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Mary Jean Bamba MATATAG DLL WEEK 4 SCIENCE G4.docx</a></li>
+    
+
+    
+    
+</ul>
+
+</div>
+<iframe id="fileViewer" src="" width="640" height="480"></iframe>
+
+<script>
+  function loadFile(url) {
+    event.preventDefault();
+    document.getElementById('fileViewer').src = url;
+  }
+</script>
+
+</body>
+</html>

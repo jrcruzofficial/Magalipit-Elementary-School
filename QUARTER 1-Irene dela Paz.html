@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>File Viewer</title>
+<style>
+   html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-wrap: column;
+      gap: 1.25rem;
+      padding: 2vh 5vw;
+      background-color: green;
+      min-height: 100vh;
+
+      /* Center and limit width on large screens */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .file-list {
+      width: 100%;
+      max-width: 150px;
+    }
+
+    .file-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+    }
+
+    .file-list li {
+      margin-bottom: 0.3125rem;
+    }
+
+    .file-list a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+
+    .file-list a:hover {
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+
+    .file-list img {
+      height: 3.125rem;
+      width: auto;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .file-list h3 {
+      color: white;
+      font-size: 1rem;
+    }
+
+    iframe {
+      flex-grow: 1;
+      width: 100%;
+      height: 80vh;
+      border: 2px solid white;
+      border-radius: 6px;
+      max-height: 90vh;
+  
+    }
+
+    /* For small screens (phones) */
+    @media (max-width: 600px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+        
+      }
+
+      .file-list {
+        width: 100%;
+        max-width: none;
+        
+      }
+
+      iframe {
+        height: 100vh;
+      }
+
+      .file-list img {
+        width: 4rem;
+        height: auto;
+      }
+    }
+
+    /* For tablets and medium desktops */
+    @media (min-width: 768px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+      }
+
+      .file-list {
+        width: 100%;
+      }
+
+      iframe {
+        height: 100vh;
+        
+      }
+    }
+
+    /* For very large screens (ultrawide) */
+    @media (min-width: 1600px) {
+      body {
+        padding: 5vh;
+        
+      }
+
+      .file-list {
+        width: 100%;
+       
+      }
+
+      iframe {
+        height: 100vh;
+    
+      }
+    }
+</style>
+</head>
+<body>
+
+<div class="file-list">
+  <ul style="position: relative; bottom: 2.5vh; margin: 0%;">
+    <li><a href="QUARTER 1.html" ><img src="back.png" style="height: 40px; position: relative; bottom: 5px; right: 10px; margin-bottom: 0%;"></a></li>
+    </ul>
+  <img src="toppng.com-deped-logo-high-resolution-dep-ed-logo-3106x1573.png" style="height: 50px; width: 80px; margin-top: 0%;">
+  <h3 style="color: white;">QUARTER 1-Irene dela Paz</h3>
+  <ul>
+    <li><a href="#" onclick="loadFile('')">Irene dela Paz WEEK 1</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1Rk95kC8xtZ7XWsZEgVa2ptzwHP-AZ1W6/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 2</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1QMufagj73mKlduTo48zC2XJKUz10-A0b/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 2</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1jfvyyazivVfJZGb2Iz5-twN294jsOktb/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 2</a></li>   
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1HDHj9_3GLhfkwVLSOWBLPvzVhjz4aqHo/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 2</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1NokKLp0nJGN7uqx4EOEH9h0B6jT8JoNy/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 2</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1Flm8NQ3vciXuGt1ij68vXvB8cSWM6FGJ/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 2</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1Y_dtbdh9D1eSwM8y1kSVDsca8-_ngEuU/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 2</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1C4ZqyNaOwqvr2s_hyD28Q_zOZuEZStZI/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 3</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1PtxO9KOxYTBnmur30jZ7PEnj4Z2G883f/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 3</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1eFJVul1XnLO5xBiZDPklR8EnSrnSeEtA/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 3</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1qVq5Ef4tzulSC88Itjxh7qmQmxAIG9Um/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 3</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1a_nHk0LNFsvvBCq_TnAxKh9ZXcF6T9sX/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 3</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1ClhYkskNH_-tNt8c3robi8RvLSf75Lyl/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 3</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1TAIltKDnDIQeI0i-rkpoRV5sqUeL9Ku-/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 4</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1vTlx-F1zvyD4GyyZl5hzbIzDdY-P3Qoo/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 4</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1dsmHRM3u3zKkCBlsy_FjYpp_T6Zw8-jb/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 4</a></li>
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1G-jOJiJQXmx8Y1QMWYeRGjufmvy6yfZg/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 4</a></li> 
+      <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1Bzbuc-BvXowSbZqUlYwkoMWX0YvFHYJX/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 4</a></li>
+       <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1KWZNs0hfVDtUmKS2dfqX1Rk0JNJ8372R/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 4</a></li>
+       <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1KoZ2XZDiyv5RIoybqNouj3NXbm-fQ1u3/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 4</a></li>
+       <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1i4Q6jyHG7RanGvE7NMAEIFrncsstDC7Y/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 4</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1V498F3e5KOOSknAtnZHa5xpRS5YBC4t7/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1pYYAPerX-2Grn--rCFe9Lv0cmzj97GEr/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1qeV7ve_SG6kbMe8V2Ntq4bJcSZOr3I7k/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1PKT6Rd6wN1XpnL0VfmJyV7gM8FcjT-5P/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1DaFODvBEhgeOKq1EsEuUOUwTT42IHuhR/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1wNINCl-K7yLjB0mzjND8nKc8a4-V77jI/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1h4MuO6csxRtiI_CXRcDJtm9ZX4wu-U_6/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1nRfvrAL9WHFtPIXrC5JC6kxagXrJEtr-/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1A44OtyoSaPtpIjyRvnLsq4oopfJUa7tY/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1lF5a4aD_I2HtcgvYrVMK6sltfuYb4Arm/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+        <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1Ww9CsV9uz5ImrVumdppTw25wHLk9rVzo/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 5</a></li>
+         <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1RQvrrDNrynofNUPS1bVhNd-uMAxaBMtv/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 6</a></li>
+         <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1jwMDSmkxmD69i95lOyXaPhtSzi_q-1tO/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 6</a></li>
+         <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1CRo-uJESQNWkLDu6ZgL57BqCdeFnMPRy/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 6</a></li>
+         <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1x7iKvpTnviwKTbXWl6c8Fto03c4pHJWt/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 6</a></li>
+         <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1SXAyl_qD2DrgdZLcUpXYfYXxAb0H_q3O/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 6</a></li>
+         <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/11yZFKYR51ToPC3vZfVdHv6RLSWcFcL6C/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">Irene dela Paz WEEK 6</a></li>
+</ul>
+
+</div>
+<iframe id="fileViewer" src="" width="640" height="480"></iframe>
+
+<script>
+  function loadFile(url) {
+    event.preventDefault();
+    document.getElementById('fileViewer').src = url;
+  }
+</script>
+
+</body>
+</html>

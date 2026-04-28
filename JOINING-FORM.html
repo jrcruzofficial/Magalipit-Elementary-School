@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Sheet Form</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+body { 
+    margin:1; 
+    font-family: Arial, sans-serif;
+     display:flex; 
+     justify-content:right; 
+     align-items:center; 
+     min-height:100vh; 
+    background: url(brigada\ joining\ bg.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 125vh;
+    background-color: rgb(132, 226, 132);
+  
+}
+
+.form-container { 
+    background: rgba(255,255,255,0.9);
+     backdrop-filter: blur(12px);
+      border-radius:15px;
+       padding:30px; 
+       width:100%;
+        max-width:400px;
+         box-shadow:0 12px 30px rgba(0,0,0,0.18); }
+
+h2 { 
+    text-align:center;
+     margin-bottom:25px;
+      color:#333; }
+
+.form-group {
+     position:relative; 
+     margin-bottom:20px; }
+
+input, select { 
+    width:100%; 
+    padding:12px; 
+    border-radius:8px; 
+    border:1px solid #ccc; 
+    font-size:15px; background:transparent;
+     transition:0.3s; }
+
+input:focus, select:focus {
+     outline:none;
+      border-color:#4facfe; }
+
+label {
+     position:absolute;
+      top:12px; 
+      left:12px;
+       color:#666;
+        pointer-events:none;
+         transition:0.3s;
+          background:rgba(255,255,255,0.9);
+           padding:0 5px; }
+
+input:focus + label, input:not(:placeholder-shown) + label, select:focus + label, select:not([value=""]) + label { 
+    top:-10px;
+     font-size:12px;
+      color:#4facfe; }
+
+button {
+     width:100%; 
+     padding:14px;
+      background:#4facfe;
+      border:none;
+       border-radius:8px;
+        color:#fff; 
+        font-size:16px;
+         font-weight:bold;
+          cursor:pointer; 
+          transition:0.3s; }
+
+button:hover { 
+    background:#3a8edb; }
+
+#confirmation { 
+    margin-top:15px;
+     padding:10px; 
+     border-radius:5px;
+      display:none;
+      text-align:center;
+       font-weight:bold; }
+
+       .form-container .logo2 img{
+        height: 55px;
+      width: 55px;
+      border-radius: 100%;
+      
+      float: right;
+
+       }
+
+@media(max-width:480px){ 
+    .form-container{padding:20px;} }
+
+
+
+</style>
+</head>
+<body>
+    
+
+<form class="form-container" id="googleForm" data-aos="zoom-in">
+   <a href="MAGALIPIT WEBSITE.html #brigada" ><img src="back.png" style="height: 25px; background-color: transparent; margin-left: 1%; float: left;"></a>
+
+  <div class="logo2">
+  <img src="malagalipit logo.jfif.jfif" alt="logo" />
+</div>
+  <h2>Joining Form</h2>
+
+  <div class="form-group">
+    <input type="text" id="name" placeholder=" " required>
+    <label for="name">Name</label>
+  </div>
+
+  <div class="form-group">
+    <input type="email" id="email" placeholder=" " autocomplete="off" onsubmit="this.reset();"required>
+    <label for="email">Email</label>
+  </div>
+
+  <div class="form-group">
+    <input type="tel" id="phone" placeholder=" " pattern="(?:\D*\d){11}\D*" title="Must contain exactly 11 numbers" required>
+    <label for="phone">Phone Number</label>
+  </div>
+
+  <div class="form-group">
+    <select id="willingness" required>
+      <option value="" disabled selected hidden></option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    <label for="willingness">Are you willing?</label>
+  </div>
+
+  <div class="form-group">
+    <input type="date" id="date" placeholder=" " required>
+    <label for="date">Date</label>
+  </div>
+
+  <button type="submit">Submit</button>
+  <div id="confirmation"></div>
+</form>
+
+<script>
+document.getElementById("googleForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const confirmation = document.getElementById("confirmation");
+
+const payload = {
+  Name: document.getElementById("name").value,
+  Email: document.getElementById("email").value,
+  Phone: document.getElementById("phone").value,
+  Willingness: document.getElementById("willingness").value,
+  Date: document.getElementById("date").value
+};
+
+fetch("https://script.google.com/macros/s/AKfycbyLFPecxkBD05le_R-p8f75_z0I6AxRoZxvpz7qVWt49MiysHkbhwLalKbhDbKMHIQc/exec", {
+  method: "POST",
+  body: JSON.stringify(payload)
+})
+
+  .then(response => response.json())
+  .then(data => {
+    confirmation.style.display = "block";
+    if(data.status === "success"){
+      confirmation.style.background = "#4caf50";
+      confirmation.style.color = "white";
+      confirmation.innerText = "✅ " + data.message;
+      this.reset();
+    } else {
+      confirmation.style.background = "#f44336";
+      confirmation.style.color = "white";
+      confirmation.innerText = "❌ Submission failed: " + data.message;
+    }
+    setTimeout(()=>{ confirmation.style.display="none"; }, 5000);
+  })
+  .catch(err => {
+    confirmation.style.display = "block";
+    confirmation.style.background = "#f44336";
+    confirmation.style.color = "white";
+    confirmation.innerText = "❌ Error: " + err;
+    setTimeout(()=>{ confirmation.style.display="none"; }, 5000);
+  });
+});
+
+ AOS.init();
+</script>
+
+</body>
+</html>

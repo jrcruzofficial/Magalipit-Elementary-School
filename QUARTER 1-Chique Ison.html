@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>File Viewer</title>
+<style>
+   html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-wrap: column;
+      gap: 1.25rem;
+      padding: 2vh 5vw;
+      background-color: green;
+      min-height: 100vh;
+
+      /* Center and limit width on large screens */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .file-list {
+      width: 100%;
+      max-width: 150px;
+    }
+
+    .file-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+    }
+
+    .file-list li {
+      margin-bottom: 0.3125rem;
+    }
+
+    .file-list a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+
+    .file-list a:hover {
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+
+    .file-list img {
+      height: 3.125rem;
+      width: auto;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .file-list h3 {
+      color: white;
+      font-size: 1rem;
+    }
+
+    iframe {
+      flex-grow: 1;
+      width: 100%;
+      height: 80vh;
+      border: 2px solid white;
+      border-radius: 6px;
+      max-height: 90vh;
+  
+    }
+
+    /* For small screens (phones) */
+    @media (max-width: 600px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+        
+      }
+
+      .file-list {
+        width: 100%;
+        max-width: none;
+        
+      }
+
+      iframe {
+        height: 100vh;
+      }
+
+      .file-list img {
+        width: 4rem;
+        height: auto;
+      }
+    }
+
+    /* For tablets and medium desktops */
+    @media (min-width: 768px) {
+      body {
+        flex-direction: row;
+         padding: 5vh 5vw;
+      }
+
+      .file-list {
+        width: 100%;
+      }
+
+      iframe {
+        height: 100vh;
+        
+      }
+    }
+
+    /* For very large screens (ultrawide) */
+    @media (min-width: 1600px) {
+      body {
+        padding: 5vh;
+        
+      }
+
+      .file-list {
+        width: 100%;
+       
+      }
+
+      iframe {
+        height: 100vh;
+    
+      }
+    }
+</style>
+</head>
+<body>
+
+<div class="file-list">
+  <ul style="position: relative; bottom: 2.5vh; margin: 0%;">
+    <li><a href="QUARTER 1.html" ><img src="back.png" style="height: 40px; position: relative; bottom: 5px; right: 10px; margin-bottom: 0%;"></a></li>
+    </ul>
+  <img src="toppng.com-deped-logo-high-resolution-dep-ed-logo-3106x1573.png" style="height: 50px; width: 80px; margin-top: 0%;">
+  <h3 style="color: white;">QUARTER 1-Chique Ison</h3>
+  <ul>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1MVlz2o1oZHoqUZoUYrz5fOo1D60r0Ijn/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLSISH 4-WEEK1-DLL MATATAG-ENGLISH 5 Q1 W1.docx</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1Z7bfAlqh5EIBjW8PNg3_MoxMLgrAavqS/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 4-WEEK1-ENGLISH 4 DLL_Q1_W1.docx</a></li>
+     <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1SGbrcJmDf8FTbu54ml1JmhEwyBAbrJt0/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 4-WEEK2</a></li>
+    <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1bFescwdKIQHVjtjG-VhnD9Fz713v4pwX/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 4-WEEK2</a></li>
+   <li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1iCKTQjXhN8y_cGhuQVHD0S4AoeN00fuN/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 4-WEEK3</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1rI4E-97gZ5I0v1e1ORbvXtibpwJ9aTNa/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 4-WEEK3</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1iITNiMXeD6EFbKN8Pmz0DQpCggHnxOa2/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 4-WEEK4</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1kuDzhYxfz-n57bt7ebEQi7Al8e__yvsn/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 5</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1OjYpildYeIHg82WHeDQrdFQmvizoESmF/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 6 WEEK 1</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1MbGWPg_tv3rg9eQrWCBZJM8UL4su8EtE/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 6 WEEK2</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1uMCyIoXHzniV1r7oXcqhenu0PtomXtw_/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 6 WEEK2</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1WSubqGulwyvUj_2CGbyoyY3g7LXx8LpI/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 6 WEEK2</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1fXCd5cuh28My4B9E0kDeYG3UgzADLLKx/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 6 WEEK3</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1PoM6mdIaCqDEX2O6xCxpf7Xi5apZxc8d/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 6 WEEK4</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1e91LExnab81LJzpFy_Fe08rIhL7TdSf8/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison ENGLISH 6 WEEK4</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1SMP8F1AajqkHqegjbtrPk-Nfq-TFmOP4/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison EPP DLL-DLL MATATAG_EPP 5 Q1 W1.docx</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1vro9pJliIMs9W_Y63e6_zAyi-ds0XmP3/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison EPP DLL-DLL MATATAG_EPP 5 Q1 W2.docx</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1JSBdR-fRwXueKQ4VRgczso3CKFOSc2v1/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison EPP DLL-DLL MATATAG_EPP 5 Q1 W3.docx</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/16WchsOPp-eKC749zWvGgrdV-h3UdRi3L/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison EPP DLL-DLL MATATAG_EPP 5 Q1 W4.docx</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1ohzkV-bmyODjV1sTI868lwazvjd7ZgPE/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison GMRC DLL</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1mJLqJvPrhExxe6LZKAUwyQxwRuVQ9lA3/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison GMRC DLL</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1g9Oko1OCgqwUVAcLCpL7kkEbuur5nsHu/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison GMRC DLLs</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1y9kPRIfnYNpCHtJR96752UUvm-jgbehZ/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique ison GMRC DLL</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1zCDh7brwc6eDbp50ogj5aRa8Jx0E0Lj9/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique MAPEH DLL</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1ZSLPAbfs6frWZM7OVFUgUExiEUNudbuO/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique MAPEH DLL</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1vVZz8nH3ertLHXQZApYXe8JENPoiHLbv/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique MAPEH DLL</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1a00MK_Amqf6uNLMZRPNBs8xyi8gyHg7p/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique MAPEH DLL</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1oK799L-wWTWsGFv8YiF9qPShP9qDHE5k/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique MAPEH DLL</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1x9-jQaVI2N5uEpMjNuLqo5vI4sOA7YkH/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique MAPEH DLL</a></li>
+<li><a href="#" onclick="loadFile('https://docs.google.com/document/d/1t5s1zqFg_qZAQe3F81VYpU66Z8vmLgs2/edit?usp=drive_link&ouid=103756182329703648493&rtpof=true&sd=true')">chique MAPEH DLL</a></li>
+
+</ul>
+
+</div>
+<iframe id="fileViewer" src="" width="640" height="480"></iframe>
+
+<script>
+  function loadFile(url) {
+    event.preventDefault();
+    document.getElementById('fileViewer').src = url;
+  }
+</script>
+
+</body>
+</html>
